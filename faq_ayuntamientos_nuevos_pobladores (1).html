@@ -1,0 +1,275 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap');
+
+  .faq-wrap {
+    font-family: 'Source Serif 4', serif;
+    padding: 2rem 0 3rem;
+    max-width: 680px;
+  }
+
+  .faq-badge {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-family: var(--font-sans);
+    color: var(--color-text-info);
+    background: var(--color-background-info);
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+  }
+
+  .faq-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    line-height: 1.25;
+    margin: 0 0 0.6rem;
+    max-width: 560px;
+  }
+
+  .faq-subtitle {
+    font-size: 16px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0 0 2.5rem;
+    max-width: 520px;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .faq-divider {
+    height: 0.5px;
+    background: var(--color-border-tertiary);
+    margin-bottom: 2rem;
+  }
+
+  .faq-item {
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: 12px;
+    overflow: hidden;
+    background: var(--color-background-primary);
+    transition: border-color 0.2s;
+  }
+
+  .faq-item.open {
+    border-color: var(--color-border-secondary);
+  }
+
+  .faq-q {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 1.1rem 1.25rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .faq-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-info);
+    min-width: 22px;
+    padding-top: 2px;
+    line-height: 1;
+  }
+
+  .faq-q-text {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    line-height: 1.45;
+    font-family: var(--font-sans);
+  }
+
+  .faq-arrow {
+    color: var(--color-text-secondary);
+    font-size: 18px;
+    transition: transform 0.25s;
+    padding-top: 1px;
+  }
+
+  .faq-item.open .faq-arrow {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    display: none;
+    padding: 0 1.25rem 1.25rem 3.5rem;
+  }
+
+  .faq-item.open .faq-answer {
+    display: block;
+  }
+
+  .faq-answer p {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    margin: 0 0 0.75rem;
+    font-weight: 300;
+  }
+
+  .faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-answer strong {
+    color: var(--color-text-primary);
+    font-weight: 500;
+  }
+
+  .faq-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 0.6rem;
+  }
+
+  .tag-green { background: #EAF3DE; color: #3B6D11; }
+  .tag-blue  { background: #E6F1FB; color: #185FA5; }
+  .tag-amber { background: #FAEEDA; color: #854F0B; }
+  .tag-teal  { background: #E1F5EE; color: #0F6E56; }
+  .tag-purple{ background: #EEEDFE; color: #534AB7; }
+
+  .faq-cta {
+    margin-top: 2rem;
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-lg);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .faq-cta-icon {
+    font-size: 22px;
+    color: var(--color-text-info);
+  }
+
+  .faq-cta-text {
+    flex: 1;
+  }
+
+  .faq-cta-text p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  .faq-cta-text strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: 2px;
+    font-family: var(--font-sans);
+  }
+
+  .faq-cta button {
+    font-size: 13px;
+    font-family: var(--font-sans);
+    white-space: nowrap;
+  }
+</style>
+
+<div class="faq-wrap">
+  <h2 class="sr-only">Preguntas frecuentes para ayuntamientos sobre nuevos pobladores</h2>
+
+  <span class="faq-badge"><i class="ti ti-building-community" aria-hidden="true"></i> Para ayuntamientos</span>
+  <h1 class="faq-title">Todo lo que necesita saber antes de decir sí</h1>
+  <p class="faq-subtitle">Resolvemos las dudas más habituales de los municipios que se plantean abrir sus puertas a nuevos vecinos.</p>
+  <div class="faq-divider"></div>
+
+  <div class="faq-item" onclick="toggle(this)">
+    <div class="faq-q">
+      <span class="faq-num">01</span>
+      <span class="faq-q-text">¿Cuánto le cuesta al ayuntamiento aparecer en la web?</span>
+      <i class="ti ti-chevron-down faq-arrow" aria-hidden="true"></i>
+    </div>
+    <div class="faq-answer">
+      <span class="faq-tag tag-green"><i class="ti ti-coin" aria-hidden="true"></i> Sin coste</span>
+      <p><strong>La presencia en la plataforma es completamente gratuita para el ayuntamiento.</strong> No hay cuota de inscripción, ni coste mensual, ni ningún pago asociado a aparecer en el directorio de municipios.</p>
+      <p>Nuestra misión es facilitar el reencuentro entre personas que buscan un lugar donde vivir y pueblos que necesitan nuevos vecinos. El beneficio para el municipio —en forma de nuevos empadronados, actividad económica y vida en el pueblo— es la razón de ser del proyecto.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" onclick="toggle(this)">
+    <div class="faq-q">
+      <span class="faq-num">02</span>
+      <span class="faq-q-text">¿Tiene el ayuntamiento que gestionar las viviendas particulares?</span>
+      <i class="ti ti-chevron-down faq-arrow" aria-hidden="true"></i>
+    </div>
+    <div class="faq-answer">
+      <span class="faq-tag tag-blue"><i class="ti ti-home" aria-hidden="true"></i> Sin gestión extra</span>
+      <p><strong>No. La gestión de viviendas particulares no recae en absoluto sobre el ayuntamiento.</strong> Los propietarios privados publican y negocian sus inmuebles de forma autónoma.</p>
+      <p>El papel del consistorio es simplemente el de anfitrión: dar a conocer el municipio, transmitir sus valores y estar disponible para recibir a los nuevos vecinos. Nada más. Toda la logística de alquiler o compraventa queda entre particulares.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" onclick="toggle(this)">
+    <div class="faq-q">
+      <span class="faq-num">03</span>
+      <span class="faq-q-text">¿Cómo filtráis a los candidatos para no hacer perder el tiempo a nadie?</span>
+      <i class="ti ti-chevron-down faq-arrow" aria-hidden="true"></i>
+    </div>
+    <div class="faq-answer">
+      <span class="faq-tag tag-teal"><i class="ti ti-filter" aria-hidden="true"></i> Filtrado previo</span>
+      <p><strong>Todos los interesados pasan por un proceso de verificación antes de contactar con ningún municipio.</strong> Revisamos su motivación, su situación real y su compatibilidad con la vida rural para asegurarnos de que el interés es genuino y sostenido.</p>
+      <p>Solo llegan al ayuntamiento los perfiles que han superado ese filtro: personas con un proyecto de vida claro, con recursos para instalarse y con voluntad real de integrarse en la comunidad. Así el ayuntamiento invierte su tiempo únicamente en candidatos serios.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" onclick="toggle(this)">
+    <div class="faq-q">
+      <span class="faq-num">04</span>
+      <span class="faq-q-text">¿Qué compromiso adquiere el ayuntamiento al unirse?</span>
+      <i class="ti ti-chevron-down faq-arrow" aria-hidden="true"></i>
+    </div>
+    <div class="faq-answer">
+      <span class="faq-tag tag-amber"><i class="ti ti-file-description" aria-hidden="true"></i> Compromiso mínimo</span>
+      <p><strong>El único compromiso es el de actuar de buena fe: responder a los candidatos que se pongan en contacto y ofrecer información honesta sobre el municipio.</strong> No hay mínimos de nuevos vecinos, ni plazos, ni objetivos numéricos.</p>
+      <p>Eso sí, pedimos que el ayuntamiento mantenga actualizada su ficha y que, cuando reciba una consulta, la atienda con la misma diligencia que cualquier otro asunto vecinal. La confianza del candidato —y la reputación de la plataforma— depende de ello.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" onclick="toggle(this)">
+    <div class="faq-q">
+      <span class="faq-num">05</span>
+      <span class="faq-q-text">¿Qué pasa si el interesado necesita ayuda con el colegio o con trámites administrativos?</span>
+      <i class="ti ti-chevron-down faq-arrow" aria-hidden="true"></i>
+    </div>
+    <div class="faq-answer">
+      <span class="faq-tag tag-purple"><i class="ti ti-school" aria-hidden="true"></i> Acompañamiento incluido</span>
+      <p><strong>Contamos con un equipo de acompañamiento que orienta a los nuevos pobladores en todos esos pasos: escolarización, empadronamiento, ayudas autonómicas, apertura de actividades, etc.</strong> El ayuntamiento no tiene que resolver esto solo.</p>
+      <p>Cuando un candidato tiene una duda de ese tipo, nuestro equipo actúa de enlace entre él y los organismos competentes. Si en algún momento necesitamos la colaboración del consistorio, os lo comunicamos con toda la información necesaria para que la gestión sea rápida y sin fricciones.</p>
+    </div>
+  </div>
+
+  <div class="faq-cta">
+    <i class="ti ti-message-circle faq-cta-icon" aria-hidden="true"></i>
+    <div class="faq-cta-text">
+      <strong>¿Tiene más preguntas?</strong>
+      <p>Estaremos encantados de resolver cualquier duda directamente con usted.</p>
+    </div>
+    <button onclick="sendPrompt('Quiero añadir más preguntas o ajustar las respuestas del FAQ')">Personalizar ↗</button>
+  </div>
+</div>
+
+<script>
+function toggle(el) {
+  el.classList.toggle('open');
+}
+</script>
